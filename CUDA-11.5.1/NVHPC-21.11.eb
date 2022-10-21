@@ -29,10 +29,11 @@ checksums = [
 
 local_gccver = '11.2.0'
 dependencies = [
-    ('GCCcore', local_gccver),
+    ('GCC', local_gccver),
     ('binutils', '2.37', '', ('GCCcore', local_gccver)),
     # This is necessary to avoid cases where just libnuma.so.1 is present in the system and -lnuma fails
-    ('numactl', '2.0.14', '', ('GCCcore', local_gccver))
+    ('numactl', '2.0.14', '', ('GCCcore', local_gccver)), 
+    ('CUDAcore', local_cudaversion)
 ]
 
 # specify default CUDA version that should be used by NVHPC
@@ -54,7 +55,7 @@ default_cuda_version = '11.5'
 #      --try-amend=default_cuda_version="10.2"
 # 2) CUDA provided via EasyBuild
 #    Use CUDA as a dependency, for example
-dependencies = [('CUDAcore', local_cudaversion)]
+#    dependencies = [('CUDAcore', local_cudaversion)]
 #    The parameter default_cuda_version still can be set as above.
 #    If not set, it will be deduced from the CUDA module (via $EBVERSIONCUDA)
 #

@@ -17,7 +17,6 @@ sources = ['vasp.6.3.2.tgz']
 
 local_gccver = '11.2.0'
 dependencies = [
-    ('GCC', local_gccver, '', True),
     ('FFTW', '3.3.10', '', ('GCC', local_gccver)),
     ('OpenMPI', '4.1.1', '-CUDAcore-%s' % local_cudaversion),
     ('ScaLAPACK', '2.1.0'),

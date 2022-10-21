@@ -37,14 +37,12 @@ checksums = [
 
 local_gccver = '11.2.0'
 builddependencies = [
-    ('GCCcore', local_gccver, '', True),
     ('pkg-config', '0.29.2', '', ('GCCcore', local_gccver)),
     ('Perl', '5.34.0', '', ('GCCcore', local_gccver)),
     ('Autotools', '20210726', '', ('GCCcore', local_gccver)),
 ]
 
 dependencies = [
-    ('GCCcore', local_gccver, '', True),
     ('zlib', '1.2.11', '', ('GCCcore', local_gccver)),
     ('hwloc', '2.5.0', '', ('GCCcore', local_gccver)),
     ('libevent', '2.1.12', '', ('GCCcore', local_gccver)),
